@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'screens/home.dart';
 
 void main() => runApp(ToDoApp());
 
@@ -7,6 +8,10 @@ class ToDoApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title: "ToDo Application.",
+      debugShowCheckedModeBanner: false,
+      home: HomeScreen(),
+    );
   }
 }
