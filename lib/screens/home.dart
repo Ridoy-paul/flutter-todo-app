@@ -7,18 +7,33 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        // title: Text("Awesome ToDo List"),
-        foregroundColor: tdBlack,
-        centerTitle: true,
-        backgroundColor: tdBGColor,
-        elevation: 0.0,
-        leading: GestureDetector(
-            onTap: () {
-              print("clicked menu");
-            },
-            child: Icon(Icons.menu)),
+      backgroundColor: tdBGColor,
+      appBar: _buildAppBar(),
+    );
+  }
+
+  AppBar _buildAppBar() {
+    return AppBar(
+      // title: Text("Awesome ToDo List"),
+      foregroundColor: tdBlack,
+      centerTitle: true,
+      backgroundColor: tdBGColor,
+      elevation: 0.0,
+      leading: GestureDetector(
+        onTap: () {
+          print("clicked menu");
+        },
+        child: Icon(Icons.menu),
       ),
+      actions: [
+        Padding(
+          padding: EdgeInsets.all(10),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(300),
+            child: Image.asset("asset/images/profile.jpeg"),
+          ),
+        )
+      ],
     );
   }
 }
