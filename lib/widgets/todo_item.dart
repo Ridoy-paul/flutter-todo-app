@@ -9,11 +9,14 @@ class ToDoItem extends StatelessWidget {
     return Container(
       child: Container(
         child: ListTile(
-          onTap: () {},
+          onTap: () {
+            print("List Checked");
+          },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
           tileColor: Colors.white,
+          contentPadding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           leading: Icon(
             Icons.check_box,
             color: tdBlue,
@@ -27,6 +30,8 @@ class ToDoItem extends StatelessWidget {
             ),
           ),
           trailing: Container(
+            padding: EdgeInsets.all(0),
+            margin: EdgeInsets.symmetric(vertical: 8),
             height: 35,
             width: 35,
             decoration: BoxDecoration(
@@ -35,7 +40,7 @@ class ToDoItem extends StatelessWidget {
             ),
             child: IconButton(
               onPressed: () {
-
+                print("delete Clicked");
               },
               color: Colors.white,
               iconSize: 18,
